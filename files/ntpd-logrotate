@@ -1,0 +1,10 @@
+# We could move the file, but ntpd doesn't handle SIGHUP, so we can't just
+# switch logs underneath it. Stopping and re-starting ntpd is an option,
+# but there's many minutes of re-sync involved so we use the copytruncate
+# command. See man logrotate for details.
+
+/var/log/ntpd.log {
+  nocreate
+  copytruncate
+}
+
