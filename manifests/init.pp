@@ -15,7 +15,8 @@ class ntp (
     '0.rhel.pool.ntp.org',
     '1.rhel.pool.ntp.org',
     '2.rhel.pool.ntp.org',
-  ]
+  ],
+  $restrict = undef,
 ) {
 
   # Main package and service it provides
