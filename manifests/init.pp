@@ -16,7 +16,10 @@ class ntp (
     '1.rhel.pool.ntp.org',
     '2.rhel.pool.ntp.org',
   ],
-  $restrict = undef,
+  $restrict = [
+    'restrict default kod nomodify notrap nopeer noquery',
+    'restrict -6 default kod nomodify notrap nopeer noquery',
+  ],
 ) {
 
   # Main package and service it provides
