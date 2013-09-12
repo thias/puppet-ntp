@@ -23,4 +23,6 @@ Advanced example, using only hieradata :
       - 0.ntp.example.com
       - 1.ntp.example.com
       - 2.ntp.example.com
+    ntp::restrict:
+      - 'default kod nomodify notrap nopeer noquery'
 
