@@ -17,8 +17,8 @@ class ntp (
     '2.rhel.pool.ntp.org',
   ],
   $restrict = [
-    'restrict default kod nomodify notrap nopeer noquery',
-    'restrict -6 default kod nomodify notrap nopeer noquery',
+    'default kod nomodify notrap nopeer noquery',
+    '-6 default kod nomodify notrap nopeer noquery',
   ],
 ) {
 
