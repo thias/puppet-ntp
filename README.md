@@ -13,16 +13,16 @@ adds a logrotate entry for it.
 
 Basic enabling of ntpd with the default servers :
 
-    include ntp
+    include '::ntp'
 
 Advanced example, using only hieradata :
 
     classes:
-      - ntp
+      - '::ntp'
     ntp::server:
-      - 0.ntp.example.com
-      - 1.ntp.example.com
-      - 2.ntp.example.com
+      - '0.ntp.example.com'
+      - '1.ntp.example.com'
+      - '2.ntp.example.com'
     ntp::restrict:
       - 'default kod nomodify notrap nopeer noquery'
 
