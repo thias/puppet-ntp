@@ -3,7 +3,7 @@
 # but there's many minutes of re-sync involved so we use the copytruncate
 # command. See man logrotate for details.
 
-/var/log/ntpd.log {
+<%= logfile %> {
   nocreate
   copytruncate
 }

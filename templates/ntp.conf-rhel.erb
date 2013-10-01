@@ -58,6 +58,8 @@ keys /etc/ntp/keys
 
 # Enable writing of statistics records.
 #statistics clockstats cryptostats loopstats peerstats
+<% if logfile != false -%>
 
-logfile /var/log/ntpd.log
-
+# Custom log file instead of syslog
+logfile <%= logfile %>
+<% end -%>

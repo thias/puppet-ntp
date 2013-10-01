@@ -11,35 +11,34 @@
 #  include ntp
 #
 class ntp (
-  $server = [
-    '0.rhel.pool.ntp.org',
-    '1.rhel.pool.ntp.org',
-    '2.rhel.pool.ntp.org',
-  ],
-  $restrict = [
-    'default kod nomodify notrap nopeer noquery',
-    '-6 default kod nomodify notrap nopeer noquery',
-  ],
-) {
+  $package_name = $::ntp::params::package_name,
+  $service_name = $::ntp::params::service_name,
+  $template     = $::ntp::params::template,
+  $server       = $::ntp::params::server,
+  $restrict     = $::ntp::params::restrict,
+  $logfile      = false,
+) inherits ::ntp::params {
 
   # Main package and service it provides
-  package { 'ntp': ensure => installed }
-  service { 'ntpd':
+  package { $package_name: ensure => installed }
+  service { $service_name:
     enable    => true,
     ensure    => running,
     hasstatus => true,
-    require   => Package['ntp'],
+    require   => Package[$package_name],
   }
 
   # Main configuration file
   file { '/etc/ntp.conf':
-    content => template("${module_name}/ntp.conf.erb"),
-    notify  => Service['ntpd'],
+    content => template($template),
+    notify  => Service[$service_name],
   }
 
-  # Logrotate for our custom log file
-  file { '/etc/logrotate.d/ntpd':
-    source => "puppet:///modules/${module_name}/ntpd-logrotate",
+  if $logfile != false {
+    # Logrotate for our custom log file
+    file { '/etc/logrotate.d/ntpd':
+      content => template("${module_name}/ntpd-logrotate.erb"),
+    }
   }
 
 }

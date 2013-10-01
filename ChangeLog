@@ -1,4 +1,7 @@
+2013-10-01 - 1.1.0
 * Update README to scope class name and quote string parameters.
+* Add support for Gentoo, using its own ntp.conf template.
+* No longer default to changing the logfile, stick to original defaults.
 
 2013-05-31 - 1.0.0
 * Initial module release, reinvent the wheel, but with hiera in mind.

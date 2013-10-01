@@ -6,8 +6,8 @@ Install, enable and configure the Network Time Protocol daemon.
 
 * `ntp` : Class to install and enable ntpd.
 
-The module also changes the logging to go directly to /var/log/ntpd.log and
-adds a logrotate entry for it.
+The module also supports changing the logging to go directly to a file instead
+of syslog, and creates a logrotate entry for that file (see example below).
 
 ## Examples
 
@@ -19,6 +19,7 @@ Advanced example, using only hieradata :
 
     classes:
       - '::ntp'
+    ntp::logfile: '/var/log/ntpd.log'
     ntp::server:
       - '0.ntp.example.com'
       - '1.ntp.example.com'
