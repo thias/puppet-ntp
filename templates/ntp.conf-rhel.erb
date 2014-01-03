@@ -1,5 +1,12 @@
 # For more information about this file, see the man pages
 # ntp.conf(5), ntp_acc(5), ntp_auth(5), ntp_clock(5), ntp_misc(5), ntp_mon(5).
+<% if ! @tinker.empty? -%>
+
+# These must occur before any other configuration options
+<% @tinker.each do |i| -%>
+tinker <%= i %>
+<% end -%>
+<% end -%>
 
 driftfile /var/lib/ntp/drift
 

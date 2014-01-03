@@ -14,6 +14,7 @@ class ntp (
   $package_name = $::ntp::params::package_name,
   $service_name = $::ntp::params::service_name,
   $template     = $::ntp::params::template,
+  $tinker       = [],
   $server       = $::ntp::params::server,
   $restrict     = $::ntp::params::restrict,
   $logfile      = false,

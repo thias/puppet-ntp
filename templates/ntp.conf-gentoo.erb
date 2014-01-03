@@ -2,6 +2,13 @@
 # DHCP clients can append or replace NTP configuration files.
 # You should consult your DHCP client documentation about its
 # default behaviour and how to change it.
+<% if ! @tinker.empty? -%>
+
+# These must occur before any other configuration options
+<% @tinker.each do |i| -%>
+tinker <%= i %>
+<% end -%>
+<% end -%>
 
 # Name of the servers ntpd should sync with
 # Please respect the access policy as stated by the responsible person.
