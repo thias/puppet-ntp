@@ -1,4 +1,4 @@
-# Define: 
+# Define:
 # Class: ntp
 #
 # Install, enable and configure the Network Time Protocol daemon.
@@ -31,6 +31,9 @@ class ntp (
 
   # Main configuration file
   file { '/etc/ntp.conf':
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
     content => template($template),
     notify  => Service[$service_name],
   }
@@ -38,6 +41,9 @@ class ntp (
   if $logfile != false {
     # Logrotate for our custom log file
     file { '/etc/logrotate.d/ntpd':
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
       content => template("${module_name}/ntpd-logrotate.erb"),
     }
   }
