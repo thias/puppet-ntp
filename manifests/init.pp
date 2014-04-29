@@ -13,6 +13,7 @@
 class ntp (
   $package_name = $::ntp::params::package_name,
   $service_name = $::ntp::params::service_name,
+  $config_file  = $::ntp::params::config_file,
   $template     = $::ntp::params::template,
   $tinker       = [],
   $server       = $::ntp::params::server,
@@ -30,7 +31,7 @@ class ntp (
   }
 
   # Main configuration file
-  file { '/etc/ntp.conf':
+  file { $config_file:
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
@@ -38,7 +39,7 @@ class ntp (
     notify  => Service[$service_name],
   }
 
-  if $logfile != false {
+  if $logfile != false and $service_name == 'ntpd' {
     # Logrotate for our custom log file
     file { '/etc/logrotate.d/ntpd':
       owner   => 'root',

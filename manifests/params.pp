@@ -1,9 +1,10 @@
 class ntp::params {
 
-  case $::operatingsystem {
-    'Gentoo': {
+  case "${::operatingsystem}-${::operatingsystemmajrelease}" {
+    /^Gentoo/: {
       $package_name = 'net-misc/ntp'
       $service_name = 'ntpd'
+      $config_file = '/etc/ntp.conf'
       $template = "${module_name}/ntp.conf-gentoo.erb"
       $server = [
         '0.gentoo.pool.ntp.org',
@@ -15,9 +16,22 @@ class ntp::params {
         'default nomodify nopeer',
       ]
     }
+    /^RedHat-7$/: {
+      $package_name = 'chrony'
+      $service_name = 'chronyd'
+      $config_file = '/etc/chrony.conf'
+      $template = "${module_name}/chrony.conf-rhel.erb"
+      $server = [
+        '0.rhel.pool.ntp.org iburst',
+        '1.rhel.pool.ntp.org iburst',
+        '2.rhel.pool.ntp.org iburst',
+        '3.rhel.pool.ntp.org iburst',
+      ]
+    }
     default: {
       $package_name = 'ntp'
       $service_name = 'ntpd'
+      $config_file = '/etc/ntp.conf'
       $template = "${module_name}/ntp.conf-rhel.erb"
       $server = [
         '0.rhel.pool.ntp.org',
