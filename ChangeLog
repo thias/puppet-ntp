@@ -1,3 +1,6 @@
+2014-11-11 - 1.1.5
+* Add support for CentOS 7 (@level99).
+
 2014-04-29 - 1.1.4
 * Add support for RHEL7 (chrony).
 
