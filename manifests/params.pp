@@ -27,6 +27,7 @@ class ntp::params {
         '2.rhel.pool.ntp.org iburst',
         '3.rhel.pool.ntp.org iburst',
       ]
+      $restrict = undef
     }
     default: {
       $package_name = 'ntp'
