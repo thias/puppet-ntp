@@ -1,6 +1,6 @@
 class ntp::params {
 
-  case "${::operatingsystem}-${::operatingsystemmajrelease}" {
+  case "${::osfamily}-${::operatingsystemmajrelease}" {
     /^Gentoo/: {
       $package_name = 'net-misc/ntp'
       $service_name = 'ntpd'
@@ -16,7 +16,7 @@ class ntp::params {
         'default nomodify nopeer',
       ]
     }
-    /^(RedHat|CentOS)-7$/: {
+    'RedHat-7': {
       $package_name = 'chrony'
       $service_name = 'chronyd'
       $config_file = '/etc/chrony.conf'
