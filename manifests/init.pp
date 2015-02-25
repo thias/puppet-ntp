@@ -22,12 +22,22 @@ class ntp (
 ) inherits ::ntp::params {
 
   # Main package and service it provides
-  package { $package_name: ensure => installed }
+  package { $package_name: ensure => 'installed' }
   service { $service_name:
+    ensure    => 'running',
     enable    => true,
-    ensure    => running,
     hasstatus => true,
     require   => Package[$package_name],
+  }
+
+  # When using chronyd, stop and disable the old ntpd 'just in case'
+  # (apparently, some public cloud instances of CentOS 7 default to ntpd)
+  if $service_name == 'chronyd' {
+    service{'ntpd':
+      ensure => 'stopped',
+      enable => false,
+      before => Service['chronyd'],
+    }
   }
 
   # Main configuration file
@@ -50,4 +60,3 @@ class ntp (
   }
 
 }
-

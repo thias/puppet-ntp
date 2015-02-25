@@ -1,3 +1,5 @@
+# Trivial parameters class inherited from the main class.
+#
 class ntp::params {
 
   case "${::osfamily}-${::operatingsystemmajrelease}" {
@@ -47,4 +49,3 @@ class ntp::params {
   }
 
 }
-
