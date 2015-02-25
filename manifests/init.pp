@@ -1,14 +1,4 @@
-# Define:
-# Class: ntp
-#
-# Install, enable and configure the Network Time Protocol daemon.
-#
-# Parameters:
-#  $server:
-#    Array of servers to use for sync. Defaults to RHEL pool from ntp.org.
-#
-# Sample Usage :
-#  include ntp
+# Main class, see README for examples.
 #
 class ntp (
   $package_name = $::ntp::params::package_name,
