@@ -1,13 +1,13 @@
 {
-  "name": "thias-ntpd",
+  "name": "thias-ntp",
   "version": "1.1.6",
   "author": "Matthias Saou",
   "license": "Apache-2.0",
   "summary": "Network Time Protocol module",
-  "source": "https://github.com/thias/puppet-ntpd",
-  "project_page": "https://forge.puppetlabs.com/thias/ntpd",
-  "issues_url": "https://github.com/thias/puppet-ntpd/issues",
-  "tags": ["ntpd", "foo"],
+  "source": "https://github.com/thias/puppet-ntp",
+  "project_page": "https://forge.puppetlabs.com/thias/ntp",
+  "issues_url": "https://github.com/thias/puppet-ntp/issues",
+  "tags": ["ntpd", "ntp"],
   "operatingsystem_support": [
     {
     "operatingsystem": "RedHat",
