@@ -13,17 +13,21 @@ of syslog, and creates a logrotate entry for that file (see example below).
 
 Basic enabling of ntpd with the default servers :
 
-    include '::ntp'
+```puppet
+include '::ntp'
+```
 
 Advanced example, using only hieradata :
 
-    classes:
-      - '::ntp'
-    ntp::logfile: '/var/log/ntpd.log'
-    ntp::server:
-      - '0.ntp.example.com'
-      - '1.ntp.example.com'
-      - '2.ntp.example.com'
-    ntp::restrict:
-      - 'default kod nomodify notrap nopeer noquery'
+```yaml
+classes:
+  - '::ntp'
+ntp::logfile: '/var/log/ntpd.log'
+ntp::server:
+  - '0.ntp.example.com'
+  - '1.ntp.example.com'
+  - '2.ntp.example.com'
+ntp::restrict:
+  - 'default kod nomodify notrap nopeer noquery'
+```
 
