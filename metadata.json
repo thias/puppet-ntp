@@ -1,0 +1,37 @@
+{
+  "name": "thias-ntpd",
+  "version": "1.1.6",
+  "author": "Matthias Saou",
+  "license": "Apache-2.0",
+  "summary": "Network Time Protocol module",
+  "source": "https://github.com/thias/puppet-ntpd",
+  "project_page": "https://forge.puppetlabs.com/thias/ntpd",
+  "issues_url": "https://github.com/thias/puppet-ntpd/issues",
+  "tags": ["ntpd", "foo"],
+  "operatingsystem_support": [
+    {
+    "operatingsystem": "RedHat",
+    "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+    "operatingsystem": "CentOS",
+    "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+    "operatingsystem":"Gentoo"
+    }
+  ],
+  "requirements": [
+    {
+    "name": "pe",
+    "version_requirement": "3.x"
+    },
+    {
+    "name": "puppet",
+    "version_requirement": ">=2.7.20 <4.0.0"
+    }
+  ],
+  "description": "Install, enable and configure ntpd for both client and server use.",
+  "dependencies": [
+  ]
+}
