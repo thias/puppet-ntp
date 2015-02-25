@@ -16,7 +16,7 @@ class ntp::params {
         'default nomodify nopeer',
       ]
     }
-    /^(RedHat|CentOS)-7$/: {
+    /^(RedHat|CentOS|Scientific)-7$/: {
       $package_name = 'chrony'
       $service_name = 'chronyd'
       $config_file = '/etc/chrony.conf'
