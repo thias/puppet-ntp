@@ -1,3 +1,5 @@
+* Require package for conf files, to better order initial setup.
+
 #### 2015-02-25 - 1.1.6
 * Fix for undef variable under strict mode (#7 @robinbowes).
 * Change to using osfamily fact (#8 @robinbowes).

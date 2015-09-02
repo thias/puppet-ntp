@@ -36,6 +36,7 @@ class ntp (
     group   => 'root',
     mode    => '0644',
     content => template($template),
+    require => Package[$package_name],
     notify  => Service[$service_name],
   }
 
@@ -46,6 +47,7 @@ class ntp (
       group   => 'root',
       mode    => '0644',
       content => template("${module_name}/ntpd-logrotate.erb"),
+      require => Package[$package_name],
     }
   }
 
