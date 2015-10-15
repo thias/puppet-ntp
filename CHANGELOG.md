@@ -1,3 +1,4 @@
+#### 2015-10-15 - 1.1.7
 * Require package for conf files, to better order initial setup.
 
 #### 2015-02-25 - 1.1.6
