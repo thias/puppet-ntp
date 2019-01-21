@@ -1,6 +1,7 @@
 # Main class, see README for examples.
 #
 class ntp (
+  $allow        = undef,
   $package_name = $::ntp::params::package_name,
   $service_name = $::ntp::params::service_name,
   $config_file  = $::ntp::params::config_file,
