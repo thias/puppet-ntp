@@ -18,11 +18,15 @@ rtcsync
 makestep 10 3
 
 # Allow NTP client access from local network.
-<%- if @allow -%>
+<% if @allow.is_a? (String) -%>
 allow <%= @allow %>
-<%- else -%>
+<% elsif @allow.is_a? (Array) -%>
+<% @allow.each do |a| -%>
+allow <%= a %>
+<% end -%>
+<% else -%>
 #allow 192.168/16
-<%- end -%>
+<% end -%>
 
 # Listen for commands only on localhost.
 bindcmdaddress 127.0.0.1

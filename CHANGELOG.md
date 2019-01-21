@@ -1,3 +1,6 @@
+#### 2019-01-21 - 1.1.8
+* Add support for allow parameter.
+
 #### 2015-10-15 - 1.1.7
 * Require package for conf files, to better order initial setup.
 
