@@ -1,3 +1,6 @@
+#### 2019-06-04 - 1.1.9
+* Add support for RHEL8.
+
 #### 2019-01-21 - 1.1.8
 * Add support for allow parameter.
 

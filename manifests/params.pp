@@ -22,7 +22,20 @@ class ntp::params {
       $package_name = 'chrony'
       $service_name = 'chronyd'
       $config_file = '/etc/chrony.conf'
-      $template = "${module_name}/chrony.conf-rhel.erb"
+      $template = "${module_name}/chrony.conf-rhel7.erb"
+      $server = [
+        '0.rhel.pool.ntp.org iburst',
+        '1.rhel.pool.ntp.org iburst',
+        '2.rhel.pool.ntp.org iburst',
+        '3.rhel.pool.ntp.org iburst',
+      ]
+      $restrict = undef
+    }
+    'RedHat-8': {
+      $package_name = 'chrony'
+      $service_name = 'chronyd'
+      $config_file = '/etc/chrony.conf'
+      $template = "${module_name}/chrony.conf-rhel8.erb"
       $server = [
         '0.rhel.pool.ntp.org iburst',
         '1.rhel.pool.ntp.org iburst',
