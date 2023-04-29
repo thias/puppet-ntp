@@ -44,6 +44,19 @@ class ntp::params {
       ]
       $restrict = undef
     }
+    'RedHat-9': {
+      $package_name = 'chrony'
+      $service_name = 'chronyd'
+      $config_file = '/etc/chrony.conf'
+      $template = "${module_name}/chrony.conf-rhel9.erb"
+      $server = [
+        '0.rhel.pool.ntp.org iburst',
+        '1.rhel.pool.ntp.org iburst',
+        '2.rhel.pool.ntp.org iburst',
+        '3.rhel.pool.ntp.org iburst',
+      ]
+      $restrict = undef
+    }
     default: {
       $package_name = 'ntp'
       $service_name = 'ntpd'

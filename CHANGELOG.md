@@ -1,3 +1,5 @@
+* Add support for RHEL9.
+
 #### 2019-06-04 - 1.1.9
 * Add support for RHEL8.
 
