@@ -2,7 +2,7 @@
 #
 class ntp::params {
 
-  case "${::osfamily}-${::operatingsystemmajrelease}" {
+  case "${facts['os']['family']}-${facts['os']['release']['major']}" {
     /^Gentoo/: {
       $package_name = 'net-misc/ntp'
       $service_name = 'ntpd'

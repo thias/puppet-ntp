@@ -1,3 +1,5 @@
+* Remove legacy facts usage.
+
 #### 2023-09-12 - 1.1.10
 * Add support for RHEL9.
 
