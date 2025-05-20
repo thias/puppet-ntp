@@ -1,3 +1,6 @@
+#### 2025-05-20 - 1.1.12
+* Enable support for RHEL10.
+
 #### 2025-02-04 - 1.1.11
 * Remove legacy facts usage.
 
